@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #101215 !important;
+}
+
+.btn-first {
+	position: relative;
+	display: inline-block;
+	padding: 25px 30px;
+	margin: 40px 0;
+	color: #03e9f4;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	transition: 0.5s;
+	letter-spacing: 4px;
+	overflow: hidden;
+	margin-right: 50px;
+	top: 50vh;
+	left: 50vw;
+	font-size: 4vw;
+	transform: translate(-50%, -50%);
+}
+
+a span {
+	position: absolute;
+	display: block;
+}
+
+a span:nth-child(1) {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #03e9f4);
+	animation: animate1 1s linear infinite;
+}
+
+a span:nth-child(2) {
+	top: -100%;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(180deg, transparent, #03e9f4);
+	animation: animate2 1s linear infinite;
+	animation-delay: 0.25s;
+}
+
+a span:nth-child(3) {
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(270deg, transparent, #03e9f4);
+	animation: animate3 1s linear infinite;
+	animation-delay: 0.5s;
+}
+
+a span:nth-child(4) {
+	bottom: -100%;
+	left: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(360deg, transparent, #03e9f4);
+	animation: animate4 1s linear infinite;
+	animation-delay: 0.75s;
+}
+
+/*  */
+
+.btn-first:hover {
+	background: #03e9f4;
+	color: #050801;
+	box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+		0 0 200px #03e9f4;
+	-webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.banner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #353b48;
+}
+
+.banner::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.banner .blocks {
+	position: relative;
+	display: block;
+	width: 5vw;
+	height: 5vw;
+	animation: animate 0.75s forwards;
+	/* forwards là để giữ lại vị trí khi hoàn thành, nếu không là nó quay về vị trí cũ */
+}
+
+.banner .blocks:nth-child(even) {
+	animation: animate 1s forwards;
+}
+
+@keyframes animate {
+	0% {
+		opacity: 0;
+		transform: scale(0) translateY(1000px);
+	}
+	50% {
+		opacity: 1;
+		background-image: url('./../images/bg10.jpg');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) translateY(0px);
+		background-image: url('./../images/bg10.jpg');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+}
+
+/* greeting */
+
+.greetingClass {
+	display: none;
+}
+
+.greeting {
+	position: absolute;
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.greeting p {
+	opacity: 0;
+	position: absolute;
+	display: none;
+	width: 100%;
+	transform: scale(0);
+	/* transform: translate(-50%, -400%);
+    top: 50%;
+    left: 50%; */
+	text-align: center;
+	text-shadow: 0 -0.05em 0.2em rgba(255, 255, 255, 0.64),
+		0rgba (255, 149, 0, 0.708) 15em rgb(255, 149, 0),
+		0.01em -0.05em 0.15em rgba(255, 55, 0, 0.616);
+	font: 7vmax/0.85 arial, impact;
+	background-image: url('./../images/fire.jpeg');
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-position: center;
+	transition: 1s;
+	animation: animateTextFire 7s linear infinite,
+		animateTextTranslate 6s ease-out;
+}
+
+/* .greeting p:nth-child(1) {
+    animation-delay: 0.25s;
+}
+
+.greeting p:nth-child(2) {
+    animation-delay: 3.25s;
+}
+
+.greeting p:nth-child(3) {
+    animation-delay: 6.25s;
+} */
+
+@keyframes animateTextFire {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 100% 100%;
+	}
+}
+
+@keyframes animateTextTranslate {
+	0% {
+		transform: translate(-50%, -400%) scale3d(-1) scale(0);
+		opacity: 0;
+		top: 50%;
+		left: 50%;
+	}
+	15% {
+		transform: translate(-50%, -300%) scale3d(-1) scale(0.5);
+		opacity: 0;
+		top: 50%;
+		left: 50%;
+	}
+	30% {
+		transform: translate(-50%, -200%) scale3d(-1) scale(0.8);
+		opacity: 0;
+		top: 50%;
+		left: 50%;
+	}
+	35% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+		top: 50%;
+		left: 50%;
+	}
+	100% {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+		top: 50%;
+		left: 50%;
+	}
+}
+
+/* Choose */
+
+.choose {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.choose h3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 3em;
+	text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+	text-align: center;
+	margin-top: 100px;
+	background-color: transparent;
+	color: #dff9fb;
+	transition: all 1s;
+	position: relative;
+	transform: translateY(-100px) scale(0);
+	animation: animeQuestion 1s linear forwards;
+}
+
+@keyframes animeQuestion {
+	from {
+		transform: translateY(-100px) scale(0);
+	}
+	to {
+		transform: translateY(0) scale(1);
+	}
+}
+
+.choose p {
+	font-family: 'Courier New', Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	text-align: center;
+	text-shadow: 1px 1px 2px black, 0 0 10px rgb(244, 116, 5),
+		0 0 5px rgb(174, 75, 0);
+	background-color: transparent;
+	color: #dff9fb;
+	transition: all 1s;
+	position: relative;
+	transform: rotate(-360deg) scale(0);
+	animation: animeQuestion2 0.4s linear forwards;
+	animation-delay: 2s;
+}
+
+@keyframes animeQuestion2 {
+	from {
+		transform: rotate(-360deg) scale(0);
+	}
+	to {
+		transform: rotate(0) scale(1);
+	}
+}
+
+.choose .choose-wrap {
+	height: calc(100% - 250px);
+	width: 95%;
+	margin: 25px auto;
+	position: relative;
+}
+
+.choose .choose-wrap div {
+	position: absolute;
+	transition: all 0.2s;
+	opacity: 0;
+	animation: animeButton2 2s linear forwards;
+	animation-delay: 3s;
+}
+
+@keyframes animeButton2 {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.choose .choose-wrap div:nth-child(1) {
+	top: 50%;
+	left: 40%;
+	/* transform: translate(-50%, -50%); */
+}
+
+.choose .choose-wrap div:nth-child(2) {
+	top: 50%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+}
+
+.choose .choose-wrap a {
+	display: block;
+	margin: 10px;
+	padding: 20px;
+	width: 200px;
+	color: #e056fd;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: 'Helvetica Neue', Helvetica, Arial;
+	font-size: 20px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+
+.choose .choose-wrap a:hover {
+	background-color: #e056fd;
+	color: #050801;
+	box-shadow: 0 0 5px #e056fd, 0 0 25px #e056fd, 0 0 50px #e056fd,
+		0 0 200px #e056fd;
+}
+
+.choose .choose-wrap a:nth-child(1) {
+}
+
+.choose .choose-wrap span {
+	display: block;
+	position: absolute;
+	box-shadow: 0px 0px 50px rgba(224, 86, 253, 1);
+}
+
+.choose .choose-wrap span:nth-child(1) {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: linear-gradient(90deg, transparent, #e056fd);
+	animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+	0% {
+		left: -100%;
+	}
+	50%,
+	100% {
+		left: 100%;
+	}
+}
+
+.choose .choose-wrap span:nth-child(2) {
+	top: 0;
+	right: 0;
+	width: 5px;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, #e056fd);
+	animation: animate2 1s linear infinite;
+	animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+	0% {
+		top: -100%;
+	}
+	50%,
+	100% {
+		top: 100%;
+	}
+}
+
+.choose .choose-wrap span:nth-child(3) {
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 5px;
+	background: linear-gradient(90deg, transparent, #e056fd);
+	animation: animate3 1s linear infinite;
+	animation-delay: 0.5s;
+}
+
+@keyframes animate3 {
+	0% {
+		right: -100%;
+	}
+	50%,
+	100% {
+		right: 100%;
+	}
+}
+
+.choose .choose-wrap span:nth-child(4) {
+	bottom: 0;
+	left: 0;
+	width: 5px;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, #e056fd);
+	animation: animate4 1s linear infinite;
+	animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+	0% {
+		bottom: -100%;
+	}
+	50%,
+	100% {
+		bottom: 100%;
+	}
+}
+
+.choose .choose-wrap div:nth-child(1) a {
+	filter: hue-rotate(50deg);
+}
